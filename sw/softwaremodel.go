@@ -83,7 +83,11 @@ type Binary struct {
 	Name            string   `json:"name" validate:"required"`
 	Version         string   `gorm:"version" json:"version" validate:"required"`
 	NeededLibraries []string `json:"needed_libraries"`
-	BinaryPath      string   `json:"binary_path,omitempty"`
+	BinaryPath      string   `json:"binary_path"`
+	SystemdFilePath string   `json:"systemd_file_path"`
+	Envs            []Env    `json:"envs"`
+	UID             string   `json:"uid"`
+	GID             string   `json:"gid"`
 	CustomDataPaths []string `json:"custom_data_paths"`
 	CustomConfigs   []string `json:"custom_configs"`
 }
